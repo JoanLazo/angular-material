@@ -2,3 +2,16 @@
    display: flex;
    flex-direction: column; 
 }
+.categories, .slider {
+   margin-top: 10px;
+}
+.category, .check {
+   padding-right: 10px;
+}
+.checks {
+   margin-top: 10px;
+}
+.slider {
+   display: flex;
+   flex-direction: column;
+}

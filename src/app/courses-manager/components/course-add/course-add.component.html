@@ -2,22 +2,74 @@
   <mat-card-title> Curso Nuevo </mat-card-title>
   <div class="form-container">
     <mat-form-field>
-      <input matInput placeholder="Nombre" type="text" />
+      <input
+        matInput
+        placeholder="Nombre"
+        type="text"
+        [(ngModel)]="course.name"
+      />
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput placeholder="Descripcion"></textarea>
+      <textarea
+        matInput
+        placeholder="Descripcion"
+        [(ngModel)]="course.description"
+      ></textarea>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-select placeholder="Especialidad">
+      <mat-select placeholder="Especialidad" [(ngModel)]="course.specialty">
         <mat-option value="angular">Angular</mat-option>
         <mat-option value="javascript">JavaScript</mat-option>
-        <mat-option value="javascript">JavaScript</mat-option>
+        <mat-option value="javascript">Vue</mat-option>
       </mat-select>
       <div></div>
-
-      <textarea matInput placeholder="Descripcion"></textarea>
     </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        [matDatepicker]="fechaInicio"
+        placeholder="Fecha de Incio"
+        [(ngModel)]="course.startDate"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="fechaInicio"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #fechaInicio></mat-datepicker>
+    </mat-form-field>
+
+    <section class="categories">
+      <mat-checkbox
+        *ngFor="let category of categories"
+        class="category"
+        [(ngModel)]="category.checked"
+      >
+        {{ category.name }}
+      </mat-checkbox>
+    </section>
+
+    <mat-radio-group class="checks" [(ngModel)]="course.isActive">
+      <mat-radio-button value="value1" class="check">Option1</mat-radio-button>
+      <mat-radio-button value="value2" class="check">Option2</mat-radio-button>
+    </mat-radio-group>
+
+    <section class="slider">
+      <span> Nivel del curso </span>
+      <mat-slider
+        [min]="0"
+        [max]="10"
+        [step]="1"
+        [thumbLabel]="true"
+        [tickInterval]="1"
+        [(ngModel)]="course.level"
+      ></mat-slider>
+    </section>
   </div>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="save()">Save</button>
+    <button mat-raised-button>Cancel</button>
+  </mat-card-actions>
 </mat-card>
