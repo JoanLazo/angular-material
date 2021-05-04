@@ -22,6 +22,36 @@ const data: Course[] = [
     isActive: true,
     level: 3
   },
+  {
+    id: 2,
+    name: 'Javascript desde Cero',
+    description: 'Javascript es un framework para el desarrollo web...',
+    specialty: 'Javascript',
+    startDate: '05/10/2019',
+    categories: ['web','angular','javascript'],
+    isActive: true,
+    level: 3
+  },
+  {
+    id: 3,
+    name: 'Bootstrap desde Cero',
+    description: 'Bootstrap es un framework para el desarrollo web...',
+    specialty: 'Bootstrap',
+    startDate: '05/10/2019',
+    categories: ['web','angular','javascript'],
+    isActive: true,
+    level: 3
+  },
+  {
+    id: 4,
+    name: 'React desde Cero',
+    description: 'React es un framework para el desarrollo web...',
+    specialty: 'React',
+    startDate: '05/10/2019',
+    categories: ['web','angular','javascript'],
+    isActive: true,
+    level: 3
+  },
 ]
 
 @Injectable({

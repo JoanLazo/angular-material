@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-title> Curso Nuevo </mat-card-title>
+  <mat-card-title> Editar Curso </mat-card-title>
   <div class="form-container">
     <mat-form-field>
       <input
@@ -23,6 +23,8 @@
         <mat-option value="angular">Angular</mat-option>
         <mat-option value="javascript">JavaScript</mat-option>
         <mat-option value="Typescript">Typescript</mat-option>
+        <mat-option value="Bootstrap">Bootstrap</mat-option>
+        <mat-option value="React">React</mat-option>
       </mat-select>
       <div></div>
     </mat-form-field>
@@ -40,16 +42,6 @@
       ></mat-datepicker-toggle>
       <mat-datepicker #fechaInicio></mat-datepicker>
     </mat-form-field>
-
-    <section class="categories">
-      <mat-checkbox
-        *ngFor="let category of categories"
-        class="category"
-        [(ngModel)]="category.checked"
-      >
-        {{ category.name }}
-      </mat-checkbox>
-    </section>
 
     <mat-radio-group class="checks" [(ngModel)]="course.isActive">
       <mat-radio-button value="true" class="check">Activo</mat-radio-button>
@@ -69,7 +61,7 @@
     </section>
   </div>
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="save()">Save</button>
+    <button mat-raised-button color="primary" (click)="update()">Update</button>
     <button mat-raised-button>Cancel</button>
   </mat-card-actions>
 </mat-card>

@@ -1,0 +1,33 @@
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Panel 1 </mat-panel-title>
+      <mat-panel-description> Contenido - Panel 1 </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+    <mat-form-field>
+      <input matInput placeholder="Ingrese Texto" />
+    </mat-form-field>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Día del viaje </mat-panel-title>
+      <mat-panel-description>
+        Informanos el día que desees viajar
+        <mat-icon>date_range</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <mat-label>Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        (focus)="picker.open()"
+        readonly
+      />
+    </mat-form-field>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-expansion-panel>
+</mat-accordion>
